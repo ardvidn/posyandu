@@ -15,6 +15,7 @@ import React from "react";
 //   onDelete: (id: number) => void;
 // };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const SearchResult: React.FC<any> = ({ data, onView, onEdit, onDelete }) => {
   const formatTanggal = (isoDate: string): string => {
     const date = new Date(isoDate);
@@ -24,10 +25,6 @@ const SearchResult: React.FC<any> = ({ data, onView, onEdit, onDelete }) => {
       year: "numeric",
     });
   };
-
-  const mytimeout = setTimeout(() => console.log(data), 5000);
-
-  console.log(mytimeout);
 
   return (
     <div className="flex flex-col items-center justify-center pt-10">

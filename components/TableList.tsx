@@ -2,21 +2,21 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 const TableList = () => {
-  const [data, setData] = useState([]);
+  const [, setData] = useState([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [rowsPerPage, setRowsPerPage] = useState<number>(5);
   const [totalPages, setTotalPages] = useState<number>(0);
 
-  const formatTanggal = (isoDate: string): string => {
-    const date = new Date(isoDate);
-    return date.toLocaleDateString("id-ID", {
-      day: "2-digit",
-      month: "2-digit",
-      year: "numeric",
-    });
-  };
+  // const formatTanggal = (isoDate: string): string => {
+  //   const date = new Date(isoDate);
+  //   return date.toLocaleDateString("id-ID", {
+  //     day: "2-digit",
+  //     month: "2-digit",
+  //     year: "numeric",
+  //   });
+  // };
 
   const fetchData = async (page: number, rows: number) => {
     setLoading(true);
@@ -96,22 +96,22 @@ const TableList = () => {
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-300">
-              {data.map((item, index) => (
-                <tr key={index} className="hover:bg-gray-50">
-                  <td className="px-4 py-2">{item.nama_balita}</td>
+              {/* {data.map((item, index) => (
+                <tr key={index} className="hover:bg-gray-50"> */}
+              {/* <td className="px-4 py-2">{item.nama_balita}</td>
                   <td className="px-4 py-2">{formatTanggal(item.tanggal_lahir)}</td>
                   <td className="px-4 py-2">{item.jenis_kelamin}</td>
                   <td className="px-4 py-2">{item.nik_bayi_balita}</td>
                   <td className="px-4 py-2">{item.nama_orangtua_ayah}</td>
-                  <td className="px-4 py-2">{item.nama_orangtua_ibu}</td>
-                  {/* <td className="px-4 py-2">{item.berat_badan}</td>
+                  <td className="px-4 py-2">{item.nama_orangtua_ibu}</td> */}
+              {/* <td className="px-4 py-2">{item.berat_badan}</td>
                   <td className="px-4 py-2">{item.tinggi_panjang_badan}</td>
                   <td className="px-4 py-2">{item.lila}</td>
                   <td className="px-4 py-2">{item.lp}</td>
                   <td className="px-4 py-2">{item.bayi_balita}</td>
                   <td className="px-4 py-2">{formatTanggal(item.tanggal_posyandu)}</td> */}
-                </tr>
-              ))}
+              {/* </tr>
+              ))} */}
             </tbody>
           </table>
         </div>
